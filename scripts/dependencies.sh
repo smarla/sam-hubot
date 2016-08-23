@@ -8,11 +8,8 @@ if [ ! -d vendor/git-crypt ]; then
 fi
 
 # GPG Keys & Repo unlocking
-gpg --import /var/snap-ci/repo/deployments-gpg
+gpg --import $project_dir/deployments-gpg
 git crypt unlock
-
-# Sourcing vars
-source $project_dir/scripts/.deployment-profile
 
 # Terraform
 if [ ! -d vendor/terraform ]; then
