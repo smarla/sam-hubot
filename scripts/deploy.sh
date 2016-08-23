@@ -3,6 +3,9 @@
 project_dir=$(pwd)
 sha=$(git rev-parse --short HEAD)
 
+# Sourcing vars
+source $project_dir/scripts/.deployment-profile
+
 touch .credentials
 echo "[default]" >> .credentials
 echo "aws_access_key_id=${AWS_ACCESS_KEY_ID}" >> .credentials
