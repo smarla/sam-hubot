@@ -8,4 +8,16 @@ resource "aws_elastic_beanstalk_configuration_template" "hubot-config" {
     name = "HUBOT_SLACK_TOKEN"
     value = "${var.hubot_slack_token}"
   }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment:"
+    name = "HUBOT_GOOGLE_CSE_ID"
+    value = "${var.hubot_google_cse_id}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment:"
+    name = "HUBOT_GOOGLE_CSE_KEY"
+    value = "${var.hubot_google_cse_key}"
+  }
 }

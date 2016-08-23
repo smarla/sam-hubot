@@ -20,4 +20,6 @@ source $project_dir/scripts/.deployment-profile
     -var "aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
     -var "aws_region=${AWS_REGION}" \
     -var "hubot_slack_token=${HUBOT_SLACK_TOKEN}" \
+    -var "hubot_google_cse_id=${HUBOT_GOOGLE_CSE_ID}" \
+    -var "hubot_google_cse_key=${HUBOT_GOOGLE_CSE_KEY}" \
     infra
