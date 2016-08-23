@@ -17,4 +17,4 @@ mv .credentials ~/.aws/credentials
 sudo pip install awsebcli
 
 eb init -r $AWS_REGION -p Docker "sam-hubot-${ENVIRONMENT}"
-eb create "${ENVIRONMENT}-default"
+eb create --cfg "sam-hubot-config-${ENVIRONMENT}" "default"
