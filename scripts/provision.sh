@@ -25,4 +25,9 @@ fi
     -backend-config="region=${region_states}"
 
 ./vendor/terraform/terraform get -update=true terraform
-./vendor/terraform/terraform apply -var environment=$environment -var access_key=$access_key_deployment -var secret_key=$secret_key_deployment infra
+./vendor/terraform/terraform apply \
+    -var environment=$environment \
+    -var aws_access_key=$access_key_deployment \
+    -var aws_secret_key=$secret_key_deployment \
+    -var aws_region=$region_deployment \
+    infra
