@@ -4,7 +4,7 @@ project_dir=$(pwd)
 
 # Git crypt
 if [ ! -d vendor/git-crypt ]; then
-    bash $project_dir/scripts/dependencies/terraform.sh
+    bash $project_dir/scripts/dependencies/git-crypt.sh
 fi
 
 # GPG Keys & Repo unlocking
