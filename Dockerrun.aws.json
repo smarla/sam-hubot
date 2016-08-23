@@ -3,5 +3,10 @@
   "Image": {
     "Name": "smarla/sam-hubot",
     "Update": "true"
-  }
+  },
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    }
+  ]
 }
