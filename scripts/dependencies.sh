@@ -2,6 +2,11 @@
 
 project_dir=$(pwd)
 
+# Git crypt
+if [ ! -d vendor/git-crypt ]; then
+    bash $project_dir/scripts/dependencies/terraform.sh
+fi
+
 # GPG Keys & Repo unlocking
 gpg --import /var/snap-ci/repo/deployments-gpg
 git crypt unlock
@@ -10,6 +15,6 @@ git crypt unlock
 source $project_dir/scripts/.deployment-profile
 
 # Terraform
-if [ ! -f vendor/terraform/terraform ]; then
+if [ ! -d vendor/terraform ]; then
     bash $project_dir/scripts/dependencies/terraform.sh
 fi
