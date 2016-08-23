@@ -13,7 +13,6 @@ region_states=${AWS_REGION_S3:-none}
 bucket_states=${STATES_BUCKET:-none}
 state_key="/sam/sam-hubot/${environment}.tfstate"
 
-hubot_slack_token=${HUBOT_SLACK_TOKEN:-none}
 
 if [ ! -f vendor/terraform/terraform ]; then
     bash scripts/terraform.sh
@@ -26,10 +25,9 @@ fi
     -backend-config="region=${region_states}"
 
 ./vendor/terraform/terraform get -update=true infra
-./vendor/terraform/terraform apply \
+./vendor/terraform/terraform destroy \
     -var environment=$environment \
     -var aws_access_key=$access_key_deployment \
     -var aws_secret_key=$secret_key_deployment \
     -var aws_region=$region_deployment \
-    -var hubot_slack_token=$hubot_slack_token \
     infra
