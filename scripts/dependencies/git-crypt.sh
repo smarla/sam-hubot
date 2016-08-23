@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+project_dir=$(pwd)
+
 version="0.5.0"
 dist="vendor/git-crypt"
 
@@ -12,4 +14,4 @@ tar -zxf "${filename}.tar.gz"
 cd $filename
 
 make
-make install
+sudo make install
