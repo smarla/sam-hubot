@@ -17,6 +17,8 @@ WORKDIR /hubot
 # Install hubot
 RUN yo hubot --owner="Smarla <home@smarla.com>" --name="Sam" --description="Sam is Smarlas eButler" --defaults
 
+ADD src/scripts ./
+
 RUN npm install hubot-slack --save
 RUN npm install
 
